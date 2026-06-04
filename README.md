@@ -55,8 +55,9 @@ web manifest resolve correctly.)
 - **Open-source links** in the Open Source section point to best-guess URLs —
   confirm `tafgeet-arabic` (npm), `laravel-aramex` and `nafezly/payments` resolve
   to the repos/packages you want.
-- **Contact form** posts to the existing `formsubmit.io` endpoint and redirects to
-  `https://omarehab.net/?thanks=true` (which shows a success toast). Confirm the
-  endpoint is still active.
+- **Contact form** uses **Netlify Forms** (`data-netlify="true"`, form name `contact`).
+  Submissions appear in the Netlify dashboard (Forms tab); add an email notification
+  there. On success it redirects to `/?thanks=true`, which shows the toast. Only works
+  on the deployed Netlify site, not the local preview.
 - Update the canonical domain (`https://omarehab.net/`) in `index.html`,
   `sitemap.xml` and `robots.txt` if it ever changes.

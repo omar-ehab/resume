@@ -937,15 +937,15 @@ html.js .reveal.in{opacity:1;transform:none}
           <a href="https://web.facebook.com/Omar.Ehab007" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></a>
         </div>
       </div>
-      <form class="form reveal" id="contact-form" action="https://formsubmit.io/send/5e8063c8-08d2-442d-9cfe-88c1a1ca8742" method="POST">
-        <input type="hidden" name="_redirect" value="https://omarehab.net/?thanks=true">
+      <form class="form reveal" id="contact-form" name="contact" method="POST" action="/?thanks=true" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
         <div class="form__row">
           <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
           <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@email.com" required></div>
         </div>
         <div class="field"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="What's this about?" required></div>
         <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" placeholder="Tell me about your project or role…" required></textarea></div>
-        <input type="text" name="_formsubmit_id" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn--primary" style="justify-content:center">Send message <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
       </form>
     </div>
