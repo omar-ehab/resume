@@ -2,7 +2,7 @@
   "id": "/",
   "name": "Omar Ehab — Senior Software Engineer",
   "short_name": "Omar Ehab",
-  "description": "Portfolio of Omar Ehab, Senior Software Engineer building scalable, high-performance systems with Node.js, microservices, React, Next.js, PostgreSQL and AWS.",
+  "description": "Portfolio of Omar Ehab, Senior Software Engineer building scalable, high-performance systems with Node.js, microservices, Vue.js, React, Next.js and AWS.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
