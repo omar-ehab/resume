@@ -12,6 +12,7 @@
 - Email: omar.ehab510@gmail.com
 - GitHub: https://github.com/omar-ehab
 - LinkedIn: https://www.linkedin.com/in/omar-ehab/
+- X (Twitter): https://x.com/omarehab000
 
 ## Core stack
 TypeScript, JavaScript, Node.js (NestJS, Express), React, Next.js, Vue.js, Laravel (PHP), Ruby on Rails, Python (Django), microservices, REST, GraphQL, WebSockets (Socket.IO), PostgreSQL, MySQL, MongoDB, CouchDB, Redis, AWS, Docker, Nginx, MinIO, Keycloak, Git, CI/CD. Strengths: system design, performance tuning, accessibility.
