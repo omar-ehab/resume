@@ -1,0 +1,37 @@
+# Omar Ehab — Senior Software Engineer
+
+> Senior Software Engineer with 6+ years architecting and building scalable, high-performance systems end-to-end across backend, frontend, databases and system design. Based in Alexandria, Egypt; works globally (remote/hybrid). Personal site: https://omarehab.net
+
+## Profile
+- Name: Omar Ehab
+- Title: Senior Software Engineer (full-stack, system design)
+- Location: Alexandria, Egypt
+- Experience: 6+ years
+- Languages: Arabic (native), English (professional working proficiency)
+- Website: https://omarehab.net
+- Email: omar.ehab510@gmail.com
+- GitHub: https://github.com/omar-ehab
+- LinkedIn: https://www.linkedin.com/in/omar-ehab/
+
+## Core stack
+TypeScript, JavaScript, Node.js (NestJS, Express), React, Next.js, Vue.js, Laravel (PHP), Ruby on Rails, Python (Django), microservices, REST, GraphQL, WebSockets (Socket.IO), PostgreSQL, MySQL, MongoDB, CouchDB, Redis, AWS, Docker, Nginx, MinIO, Keycloak, Git, CI/CD. Strengths: system design, performance tuning, accessibility.
+
+## Experience
+- Senior Software Engineer — Easygenerator (Apr 2025–present, Dubai, hybrid): frontend of EasyVideo, an AI training-video editor (150+ AI avatars, 350+ voices, 75 languages); built a PowerPoint-to-JSON engine converting 50-slide decks into editable scenes in under 2 seconds; migrated the editor to a multi-scene architecture.
+- Senior Software Engineer — WeeFlare (Feb 2024–Apr 2025, Abu Dhabi, remote): scaled the RivalN platform from 1,500 to 200,000+ active users; engineered a Redis-backed caching and WebSocket layer sustaining 100,000+ concurrent connections; rebuilt the React admin dashboard (~68% faster); led a team of 4.
+- Senior Software Engineer — A1G (May 2024–Apr 2025, Saudi Arabia, remote, part-time): re-architected the SEEC government website on Next.js + Directus CMS to a 95+ Lighthouse score with strong accessibility.
+- Software Engineer (Full-Stack) — KAD Integrated Information Systems (Feb 2023–May 2024, Saudi Arabia, remote): delivered the ETEC (Education & Training Evaluation Commission) platform on an N-tier architecture with Keycloak IAM, a multi-database backend (MySQL, CouchDB), Redis and MinIO, containerized with Docker; integrated the SWCC system with SAP (Ariba, S/4HANA).
+- Full-Stack Developer — Freelance (Aug 2018–present, Alexandria): delivered end-to-end web apps for 38+ clients across Node.js (NestJS), Laravel and Ruby on Rails.
+- Earlier: Software Engineer at the Egyptian Armed Forces (Django/PostgreSQL), Incorta (Java EE, React) and BADR (Ruby on Rails internship).
+
+## Open source
+- tafgeet-arabic (author) — npm/TypeScript package converting numeric amounts into grammatically correct written Arabic; 24 currencies, 1,000+ tests, dual ESM/CJS build.
+- laravel-aramex (author) — Composer/PHP package integrating the Aramex courier API (rates, pickups, shipments, labels, tracking).
+- nafezly/payments (contributor) — widely-used Laravel payments package (479+ GitHub stars, 30+ gateways including Paymob, Fawry, PayTabs, PayPal, Stripe).
+
+## Education
+- B.E. in Computer Engineering — Pharos University, Alexandria (2016–2021), GPA 3.25.
+
+## Contact
+- Email: omar.ehab510@gmail.com
+- Website: https://omarehab.net

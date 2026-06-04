@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local tooling (Claude Code preview server config)
+.claude/
+
+# Logs / temp
+*.log
+.cache/
+node_modules/

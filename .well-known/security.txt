@@ -1,0 +1,5 @@
+# Security contact for omarehab.net
+Contact: mailto:omar.ehab510@gmail.com
+Expires: 2027-06-04T00:00:00.000Z
+Preferred-Languages: en, ar
+Canonical: https://omarehab.net/.well-known/security.txt

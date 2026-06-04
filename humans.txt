@@ -1,0 +1,14 @@
+/* TEAM */
+  Engineer: Omar Ehab
+  Role: Senior Software Engineer
+  Contact: omar.ehab510@gmail.com
+  GitHub: github.com/omar-ehab
+  LinkedIn: linkedin.com/in/omar-ehab
+  Location: Alexandria, Egypt
+
+/* SITE */
+  Last updated: 2026-06-04
+  Language: English
+  Standards: HTML5, CSS3, JavaScript
+  Components: None — zero dependencies, no build step
+  Software: Hand-coded
