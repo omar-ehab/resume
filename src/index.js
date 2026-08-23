@@ -69,8 +69,9 @@ async function handleContact(request, env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const path = url.pathname.replace(/\/+$/, '') || '/';
 
-    if (url.pathname === '/contact') {
+    if (path === '/contact') {
       if (request.method === 'POST') return handleContact(request, env);
       return new Response(null, { status: 303, headers: { Location: '/#contact' } });
     }
