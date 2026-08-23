@@ -12,6 +12,11 @@ desktop.ini
 # Local tooling (Claude Code preview server config)
 .claude/
 
+# Cloudflare Wrangler local state + local secrets (NEVER commit .dev.vars)
+.wrangler/
+.dev.vars
+.dev.vars.*
+
 # Logs / temp
 *.log
 .cache/

@@ -27,12 +27,17 @@ zero build step, zero third-party runtime requests. Engineered for top-tier
 
 ```
 index.html                 # the whole page (markup + inlined critical CSS + JSON-LD)
+404.html                   # not-found page, same theme
 manifest.webmanifest
 robots.txt  sitemap.xml
+_headers                   # cache + security headers (read by Workers Static Assets)
+wrangler.jsonc             # Worker config: entry point + assets directory
+.assetsignore              # keeps src/, config and docs out of the public site
+src/index.js               # Worker: POST /contact -> Resend, everything else -> assets
 assets/
   js/main.js               # all interactivity (vanilla, no deps)
-  fonts/                    # self-hosted Poppins (woff2/woff)
-  img/                      # photos, optimized project shots, icons, og-image
+  fonts/                    # self-hosted Poppins (woff2 subset, .v2 = de-hinted)
+  img/                      # photos in AVIF/WebP with original fallbacks, icons, og-image
   pdf/omar-ehab-cv.pdf      # downloadable CV
 ```
 
@@ -47,17 +52,28 @@ python -m http.server 5500
 # then open http://localhost:5500
 ```
 
-(Any static server works. A server is needed so the self-hosted fonts and the
-web manifest resolve correctly.)
+That serves the static site only; `/contact` will not work because there is no
+Worker. To run the Worker too:
+
+```bash
+npx wrangler dev --persist-to ../.wrangler-state
+```
+
+The `--persist-to` flag is required. `wrangler.jsonc` sets the assets directory to
+the repo root, so without it wrangler watches the `.wrangler/` state files it writes
+there and reloads in a loop until requests time out. Put `RESEND_API_KEY=...` in a
+`.dev.vars` file (gitignored) to exercise the mail path locally.
 
 ## Things to verify / personalize
 
 - **Open-source links** in the Open Source section point to best-guess URLs —
   confirm `tafgeet-arabic` (npm), `laravel-aramex` and `nafezly/payments` resolve
   to the repos/packages you want.
-- **Contact form** uses **Netlify Forms** (`data-netlify="true"`, form name `contact`).
-  Submissions appear in the Netlify dashboard (Forms tab); add an email notification
-  there. On success it redirects to `/?thanks=true`, which shows the toast. Only works
-  on the deployed Netlify site, not the local preview.
+- **Contact form** POSTs to `/contact`, handled by the Worker in `src/index.js`,
+  which relays the message through [Resend](https://resend.com). On success it
+  redirects to `/?thanks=true`, which shows the toast; on failure it renders a plain
+  error page pointing at the `mailto:` fallback.
+  Requires a `RESEND_API_KEY` **secret** on the Worker
+  (Settings > Variables and Secrets > add as *Secret*), then a redeploy.
 - Update the canonical domain (`https://omarehab.net/`) in `index.html`,
   `sitemap.xml` and `robots.txt` if it ever changes.
