@@ -60,7 +60,7 @@
     if (scrollUp) scrollUp.classList.toggle('show', y > 600);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  requestAnimationFrame(onScroll);
 
   /* ---------- Scroll-spy: highlight active nav link ---------- */
   var sections = $$('main section[id]');
@@ -93,9 +93,9 @@
     // Fail-safe: reveal anything already in the viewport on the next frame,
     // so above-the-fold content never stays hidden if the observer is delayed.
     requestAnimationFrame(function () {
-      reveals.forEach(function (el) {
-        if (el.getBoundingClientRect().top < window.innerHeight) { el.classList.add('in'); ro.unobserve(el); }
-      });
+      var vh = window.innerHeight;
+      var visible = reveals.filter(function (el) { return el.getBoundingClientRect().top < vh; });
+      visible.forEach(function (el) { el.classList.add('in'); ro.unobserve(el); });
     });
   }
 
