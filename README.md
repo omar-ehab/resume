@@ -35,15 +35,11 @@ wrangler.jsonc             # Worker config: entry point + assets directory
 .assetsignore              # keeps src/, config and docs out of the public site
 src/index.js               # Worker: POST /contact -> Resend, everything else -> assets
 assets/
-  js/main.js               # all interactivity (vanilla, no deps)
+  js/main.v2.js            # all interactivity (vanilla, no deps)
   fonts/                    # self-hosted Poppins (woff2 subset, .v2 = de-hinted)
   img/                      # photos in AVIF/WebP with original fallbacks, icons, og-image
   pdf/omar-ehab-cv.pdf      # downloadable CV
 ```
-
-> The legacy `assets/css/{swiper-bundle,noty,styles}.min?.css` and
-> `assets/js/{swiper-bundle,noty}.min.js` files are no longer referenced and can
-> be safely deleted.
 
 ## Run locally
 

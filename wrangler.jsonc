@@ -6,6 +6,9 @@
     "directory": "./",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
+    // Browser form POSTs carry Sec-Fetch-Mode: navigate, which the asset router
+    // otherwise answers with 405 before the Worker ever runs. Removing this
+    // breaks the contact form in browsers only; curl and fetch keep working.
     "run_worker_first": ["/contact", "/contact/"]
   }
 }
