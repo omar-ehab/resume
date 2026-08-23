@@ -94,9 +94,10 @@ document.documentElement.classList.add('js');
 </script>
 
 <!-- ==================== PERFORMANCE: PRELOAD CRITICAL ASSETS ==================== -->
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-regular.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-semibold.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/img/perfil.png" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/perfil.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-regular.v2.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-medium.v2.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-semibold.v2.woff2" crossorigin>
 
 <!-- ==================== STRUCTURED DATA (JSON-LD) ==================== -->
 <script type="application/ld+json">
@@ -220,9 +221,9 @@ document.documentElement.classList.add('js');
 <!-- ==================== CRITICAL CSS (inlined for zero render-blocking requests) ==================== -->
 <style>
 /* ----- Fonts (self-hosted, no third-party requests) ----- */
-@font-face{font-family:'Poppins';src:url('assets/fonts/poppins-regular.woff2') format('woff2'),url('assets/fonts/poppins-regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Poppins';src:url('assets/fonts/poppins-medium.woff2') format('woff2'),url('assets/fonts/poppins-medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Poppins';src:url('assets/fonts/poppins-semibold.woff2') format('woff2'),url('assets/fonts/poppins-semibold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Poppins';src:url('assets/fonts/poppins-regular.v2.woff2') format('woff2'),url('assets/fonts/poppins-regular.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Poppins';src:url('assets/fonts/poppins-medium.v2.woff2') format('woff2'),url('assets/fonts/poppins-medium.woff') format('woff');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Poppins';src:url('assets/fonts/poppins-semibold.v2.woff2') format('woff2'),url('assets/fonts/poppins-semibold.woff') format('woff');font-weight:600;font-style:normal;font-display:swap}
 
 /* ----- Design tokens ----- */
 :root{
@@ -260,6 +261,7 @@ body{
 }
 img,svg{display:block;max-width:100%}
 img{height:auto}/* let CSS aspect-ratio/object-fit win over width/height attributes */
+picture{display:contents}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
@@ -612,7 +614,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <div class="hero__media reveal">
         <div class="hero__blob">
-          <img class="hero__photo" src="assets/img/perfil.png" alt="Portrait of Omar Ehab, Senior Software Engineer" width="362" height="377" fetchpriority="high">
+          <picture><source srcset="assets/img/perfil.avif" type="image/avif"><source srcset="assets/img/perfil.webp" type="image/webp"><img class="hero__photo" src="assets/img/perfil.png" alt="Portrait of Omar Ehab, Senior Software Engineer" width="362" height="377" fetchpriority="high"></picture>
         </div>
         <div class="hero__badge hero__badge--1"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-server"/></svg> <span><b>100K+</b> concurrent</span></div>
         <div class="hero__badge hero__badge--2"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-rocket"/></svg> <span><b>6+</b> yrs shipping</span></div>
@@ -631,7 +633,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <section class="about section container" id="about" aria-labelledby="about-title">
     <div class="about__grid">
       <div class="about__img-wrap reveal">
-        <img class="about__img" src="assets/img/about.jpg" alt="Omar Ehab working as a software engineer" width="720" height="720" loading="lazy">
+        <picture><source srcset="assets/img/about-440.avif 440w, assets/img/about-720.avif 720w" sizes="(max-width:980px) min(100vw - 2.5rem, 340px), 437px" type="image/avif"><source srcset="assets/img/about-440.webp 440w, assets/img/about-720.webp 720w" sizes="(max-width:980px) min(100vw - 2.5rem, 340px), 437px" type="image/webp"><img class="about__img" src="assets/img/about.jpg" alt="Omar Ehab working as a software engineer" width="720" height="720" loading="lazy" decoding="async"></picture>
       </div>
       <div class="about__data">
         <p class="eyebrow">About me</p>
@@ -888,32 +890,32 @@ html.js .reveal.in{opacity:1;transform:none}
       <figure class="tcard">
         <div class="tcard__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
         <blockquote class="tcard__quote">"I was impressed by Omar's work — he delivered with the highest professionalism. Thank you, and we'll have a future deal."</blockquote>
-        <figcaption class="tcard__person"><img src="assets/img/testimonial1.jpg" alt="Khairan Alkhayari" loading="lazy" width="46" height="46"><div><h3>Khairan Alkhayari</h3><span>Client</span></div></figcaption>
+        <figcaption class="tcard__person"><picture><source srcset="assets/img/testimonial1.avif" type="image/avif"><source srcset="assets/img/testimonial1.webp" type="image/webp"><img src="assets/img/testimonial1.jpg" alt="Khairan Alkhayari" loading="lazy" decoding="async" width="46" height="46"></picture><div><h3>Khairan Alkhayari</h3><span>Client</span></div></figcaption>
       </figure>
       <figure class="tcard">
         <div class="tcard__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
         <blockquote class="tcard__quote">"Experienced and professional. He accomplished what I needed and more, in record time — and won't be the last to deal with him. I recommend him to everyone."</blockquote>
-        <figcaption class="tcard__person"><img src="assets/img/testimonial2.jpg" alt="Mimi ElFares" loading="lazy" width="46" height="46"><div><h3>Mimi ElFares</h3><span>Client</span></div></figcaption>
+        <figcaption class="tcard__person"><picture><source srcset="assets/img/testimonial2.avif" type="image/avif"><source srcset="assets/img/testimonial2.webp" type="image/webp"><img src="assets/img/testimonial2.jpg" alt="Mimi ElFares" loading="lazy" decoding="async" width="46" height="46"></picture><div><h3>Mimi ElFares</h3><span>Client</span></div></figcaption>
       </figure>
       <figure class="tcard">
         <div class="tcard__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
         <blockquote class="tcard__quote">"It was a pleasure working with you. Thank you for your sincerity and honesty in the work — I wish you all the success."</blockquote>
-        <figcaption class="tcard__person"><img src="assets/img/testimonial3.jpg" alt="Fahad Alshamri" loading="lazy" width="46" height="46"><div><h3>Fahad Alshamri</h3><span>Client</span></div></figcaption>
+        <figcaption class="tcard__person"><picture><source srcset="assets/img/testimonial3.avif" type="image/avif"><source srcset="assets/img/testimonial3.webp" type="image/webp"><img src="assets/img/testimonial3.jpg" alt="Fahad Alshamri" loading="lazy" decoding="async" width="46" height="46"></picture><div><h3>Fahad Alshamri</h3><span>Client</span></div></figcaption>
       </figure>
       <figure class="tcard">
         <div class="tcard__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
         <blockquote class="tcard__quote">"Omar completed the project in record time with flexibility and high quality. I advise everyone to work with him — we have more projects ahead."</blockquote>
-        <figcaption class="tcard__person"><img src="assets/img/testimonial4.jpg" alt="Peter Tharwat" loading="lazy" width="46" height="46"><div><h3>Peter Tharwat</h3><span>Client</span></div></figcaption>
+        <figcaption class="tcard__person"><picture><source srcset="assets/img/testimonial4.avif" type="image/avif"><source srcset="assets/img/testimonial4.webp" type="image/webp"><img src="assets/img/testimonial4.jpg" alt="Peter Tharwat" loading="lazy" decoding="async" width="46" height="46"></picture><div><h3>Peter Tharwat</h3><span>Client</span></div></figcaption>
       </figure>
       <figure class="tcard">
         <div class="tcard__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
         <blockquote class="tcard__quote">"I got a great impression. He carried out my project with all the quality possible."</blockquote>
-        <figcaption class="tcard__person"><img src="assets/img/testimonial5.jpg" alt="Ahmad Abdelgawad" loading="lazy" width="46" height="46"><div><h3>Ahmad Abdelgawad</h3><span>Client</span></div></figcaption>
+        <figcaption class="tcard__person"><picture><source srcset="assets/img/testimonial5.avif" type="image/avif"><source srcset="assets/img/testimonial5.webp" type="image/webp"><img src="assets/img/testimonial5.jpg" alt="Ahmad Abdelgawad" loading="lazy" decoding="async" width="46" height="46"></picture><div><h3>Ahmad Abdelgawad</h3><span>Client</span></div></figcaption>
       </figure>
       <figure class="tcard">
         <div class="tcard__stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><svg class="ico ico--fill" aria-hidden="true" focusable="false"><use href="#i-star"/></svg></div>
         <blockquote class="tcard__quote">"Omar is fantastic, delivers exactly what you want, and is a great guy as well — thanks for all your hard work on my website."</blockquote>
-        <figcaption class="tcard__person"><img src="assets/img/testimonial6.jpg" alt="Khaled Alfarouk" loading="lazy" width="46" height="46"><div><h3>Khaled Alfarouk</h3><span>Client</span></div></figcaption>
+        <figcaption class="tcard__person"><picture><source srcset="assets/img/testimonial6.avif" type="image/avif"><source srcset="assets/img/testimonial6.webp" type="image/webp"><img src="assets/img/testimonial6.jpg" alt="Khaled Alfarouk" loading="lazy" decoding="async" width="46" height="46"></picture><div><h3>Khaled Alfarouk</h3><span>Client</span></div></figcaption>
       </figure>
     </div>
     <div class="dots" id="t-dots" role="group" aria-label="Choose a testimonial"></div>
@@ -937,8 +939,7 @@ html.js .reveal.in{opacity:1;transform:none}
           <a href="https://web.facebook.com/Omar.Ehab007" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-facebook"/></svg></a>
         </div>
       </div>
-      <form class="form reveal" id="contact-form" name="contact" method="POST" action="/?thanks=true" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
+      <form class="form reveal" id="contact-form" name="contact" method="POST" action="/contact">
         <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
         <div class="form__row">
           <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
