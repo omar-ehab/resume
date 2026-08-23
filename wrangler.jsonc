@@ -1,0 +1,10 @@
+{
+  "name": "resume",
+  "main": "src/index.js",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page"
+  }
+}

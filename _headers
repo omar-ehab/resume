@@ -1,0 +1,30 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), browsing-topics=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Font filenames carry a version suffix (.v2), so content changes ship under a
+# new name. Safe to cache hard and never revalidate.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Image filenames are NOT versioned, so cache for a day then serve stale while
+# revalidating in the background.
+/assets/img/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/assets/js/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/pdf/*
+  Cache-Control: public, max-age=604800
+
+# HTML must always revalidate so edits go live immediately.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
